@@ -1,12 +1,13 @@
 import React from "react";
-import { IMAGES } from "../../assets";
+// import { IMAGES } from "../../assets";
+import Banner from "../../assets/images/banner.png"
 
 const MainContent: React.FC = () => {
   return (
-    <main className="p-4 flex relative">
+    <main className="flex relative">
       <div className="w-full h-full overflow-hidden rounded-lg">
         <img
-          src={IMAGES.main}
+          src={Banner}
           alt="Peta Indonesia"
           className="w-full h-full object-cover object-center rounded-lg"
         />

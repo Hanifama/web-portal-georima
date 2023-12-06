@@ -6,7 +6,11 @@ module.exports = {
     './public/index.html',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        readux: ['Readux Pro', 'sans-serif'],
+      },
+    },
   },
   variants: {
     dark: {},

@@ -6,6 +6,7 @@ import ActivityCard from "../component/Content/activity";
 import NewsCard from "../component/Content/news";
 import ServiceCard from "../component/Content/service";
 import WorkAchievementChart from '../component/Content/chart';
+import Poligon from "../assets/icon/Polygon 3.png"
 
 
 const MainPage: React.FC = () => {
@@ -141,7 +142,7 @@ const MainPage: React.FC = () => {
       title: "Portal Georima",
       description:
         "Layanan portal Georima untuk informasi geospasial dan pemetaan.",
-        "image":"activity"
+      "image": "activity"
     },
     {
       id: 2,
@@ -183,7 +184,7 @@ const MainPage: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen w-full">
       <Header />
       <MainContent />
       <div className="p-4">
@@ -191,7 +192,7 @@ const MainPage: React.FC = () => {
           Layanan Kami
         </h2>
         <div className="flex flex-wrap justify-between">
-          {serviceData.map((service:any, index) => (
+          {serviceData.map((service: any, index) => (
             <ServiceCard
               key={service.id}
               title={service.title}
@@ -201,6 +202,21 @@ const MainPage: React.FC = () => {
               image={service.image}
             />
           ))}
+        </div>
+      </div>
+      <div className="bg-gray-200 flex h-screen p-6 font-readux">
+        <div className="bg-white rounded-xl shadow-lg w-full">
+          <div className="flex mb-4 w-full p-3">
+            <div className="w-1/2 h-12">
+              <div className="m-12 border-2 w-96 h-48 rounded-lg"></div>
+              <div className="flex items-center">
+                <span className="ml-12 font-bold text-3xl">Tugas</span>
+                <span className="text-3xl ml-1">Georima</span>
+                <img src={Poligon} alt="" className="ml-32 w-3.5" />
+              </div>
+            </div>
+            <div className="w-2/3 h-12 border-2">B</div>
+          </div>
         </div>
       </div>
       <div className="p-4">
@@ -238,9 +254,9 @@ const MainPage: React.FC = () => {
         </div>
       </div>
       <div>
-      <h1>Your Main Page</h1>
-      <WorkAchievementChart data={workAchievementData} />
-    </div>
+        <h1>Your Main Page</h1>
+        <WorkAchievementChart data={workAchievementData} />
+      </div>
       <Footer />
     </div>
   );
