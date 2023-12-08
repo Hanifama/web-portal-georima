@@ -14,6 +14,13 @@ import Clock from "../assets/icon/clock-icon.svg";
 import UserIcon from "../assets/icon/user-icon.svg";
 import Calendar from "../assets/icon/calendar-icon.svg";
 import Aktiviti from "../assets/images/activity.jpeg"
+import Georima from "../assets/images/georima.png";
+import Sirima from "../assets/images/sirima.png";
+import Simbakun from "../assets/images/simbakun.png";
+import Andini from "../assets/images/andini.png";
+import Simanis from "../assets/images/simanis.png";
+import Lastri from "../assets/images/simanis.png";
+import Sigina from "../assets/images/sigina.png";
 
 
 const MainPage: React.FC = () => {
@@ -380,7 +387,7 @@ const MainPage: React.FC = () => {
           <div className="border-2 px-3 text-center py-2 w-52 h-12 border-[#242E3A] text-[#242E3A] cursor-pointer rounded-md">Dokumentasi Lainnya</div>
         </div>
         {/* Grid */}
-        <div className="grid grid-cols-3 gap-x-7 gap-y-5 rounded-md mb-20">
+        <div className="grid grid-cols-3 gap-x-7 gap-y-5 rounded-md">
           <div className="h-15 border-2 aspect-video rounded-md overflow-hidden group relative hover:scale-95 transition-all duration-500">
             <div className="w-full h-full bg-[url('./assets/images/activity.jpeg')] bg-cover bg-center absolute group-hover:scale-125 transition-all duration-500"></div>
           </div>
@@ -409,9 +416,117 @@ const MainPage: React.FC = () => {
             <div className="w-full h-full bg-[url('./assets/images/activity.jpeg')] bg-cover bg-center absolute group-hover:scale-125 transition-all duration-500"></div>
           </div>
         </div>
-        
+
       </div>
       {/* Kegiatan End */}
+
+      {/* Pelayanan Start */}
+      <div className="mx-24 mt-14 font-readux">
+        <div>
+          <span className="font-bold text-3xl">Pelayanan</span> <span className="text-2xl">Publik</span>
+          <p className="mt-2">Pusat Sumber Daya Mineral, Batubara dan Panas Bumi mempunyai tugas penelitian, penyelidikan, pelayanan, dan survei di bidang pemetaan, geosains, serta sumber daya minyak dan gas bumi. Pelayanan Pusat Sumber Daya Mineral, Batubara dan Panas Bumi adalah sebagai berikut:</p>
+        </div>
+        <div className="flex items-center">
+          <img src={Georima} alt="" className="w-80" />
+          <div className="ml-4">
+            <span className="text-xl font-bold">GeoRima</span>
+            <p>GeoRIMA (Geological Resources of Indonesia Multiplatform Application) adalah aplikasi yang digunakan untuk memberikan informasi kepada masyarakat umum mengenai keterdapatan potensi mineral, batubara, panas bumi di seluruh Indonesia.</p>
+            <div className="flex">
+              <div className="w-32 px-2 py-1 text-center border-2 rounded-md cursor-pointer">Lihat Layanan</div>
+              <div className="w-32 px-2 py-1 text-center bg-black text-[#F9AE0C] rounded-md ml-6 cursor-pointer">Unduh Aplikasi</div>
+            </div>
+          </div>
+        </div>
+        <div className="flex mt-4">
+          <div className="text-right mr-5">
+            <span className="text-xl font-bold">SiRima</span>
+            <p>GeoRIMA (Geological Resources of Indonesia Multiplatform Application) adalah aplikasi yang digunakan untuk memberikan informasi kepada masyarakat umum mengenai keterdapatan potensi mineral, batubara, panas bumi di seluruh Indonesia.</p>
+            <div className="flex justify-end">
+              <div className="w-32 px-2 py-1 text-center bg-black text-[#F9AE0C] rounded-md mr-6 cursor-pointer">Unduh Aplikasi</div>
+              <div className="w-32 px-2 py-1 text-center border-2 rounded-md cursor-pointer">Lihat Layanan</div>
+            </div>
+          </div>
+          <img src={Sirima} alt="" className="w-80 ml-4" />
+        </div>
+        <div className="flex items-center mt-4">
+          <img src={Simbakun} alt="" className="w-60" />
+          <div className="ml-4">
+            <span className="text-xl font-bold">SiMbakun</span>
+            <p>GeoRIMA (Geological Resources of Indonesia Multiplatform Application) adalah aplikasi yang digunakan untuk memberikan informasi kepada masyarakat umum mengenai keterdapatan potensi mineral, batubara, panas bumi di seluruh Indonesia.</p>
+            <div className="flex">
+              <div className="w-32 px-2 py-1 text-center border-2 rounded-md cursor-pointer">Lihat Layanan</div>
+              <div className="w-32 px-2 py-1 text-center bg-black text-[#F9AE0C] rounded-md ml-6 cursor-pointer">Unduh Aplikasi</div>
+            </div>
+          </div>
+        </div>
+        <div className="flex mt-4">
+          <div className="text-right mr-5">
+            <span className="text-xl font-bold">Andini</span>
+            <p>GeoRIMA (Geological Resources of Indonesia Multiplatform Application) adalah aplikasi yang digunakan untuk memberikan informasi kepada masyarakat umum mengenai keterdapatan potensi mineral, batubara, panas bumi di seluruh Indonesia.</p>
+            <div className="flex justify-end">
+              <div className="w-32 px-2 py-1 text-center bg-black text-[#F9AE0C] rounded-md mr-6 cursor-pointer">Unduh Aplikasi</div>
+              <div className="w-32 px-2 py-1 text-center border-2 rounded-md cursor-pointer">Lihat Layanan</div>
+            </div>
+          </div>
+          <img src={Andini} alt="" className="w-80 ml-4" />
+        </div>
+        <div className="flex items-center mt-4">
+          <img src={Simanis} alt="" className="w-60" />
+          <div className="ml-4">
+            <span className="text-xl font-bold">SiManis</span>
+            <p>GeoRIMA (Geological Resources of Indonesia Multiplatform Application) adalah aplikasi yang digunakan untuk memberikan informasi kepada masyarakat umum mengenai keterdapatan potensi mineral, batubara, panas bumi di seluruh Indonesia.</p>
+            <div className="flex">
+              <div className="w-32 px-2 py-1 text-center border-2 rounded-md cursor-pointer">Lihat Layanan</div>
+              <div className="w-32 px-2 py-1 text-center bg-black text-[#F9AE0C] rounded-md ml-6 cursor-pointer">Unduh Aplikasi</div>
+            </div>
+          </div>
+        </div>
+        <div className="flex mt-4">
+          <div className="text-right mr-5">
+            <span className="text-xl font-bold">Lastri</span>
+            <p>GeoRIMA (Geological Resources of Indonesia Multiplatform Application) adalah aplikasi yang digunakan untuk memberikan informasi kepada masyarakat umum mengenai keterdapatan potensi mineral, batubara, panas bumi di seluruh Indonesia.</p>
+            <div className="flex justify-end">
+              <div className="w-32 px-2 py-1 text-center bg-[#242E3A] text-[#F9AE0C] rounded-md mr-6 cursor-pointer">Unduh Aplikasi</div>
+              <div className="w-32 px-2 py-1 text-center border-2 rounded-md cursor-pointer">Lihat Layanan</div>
+            </div>
+          </div>
+          <img src={Lastri} alt="" className="w-80 ml-4" />
+        </div>
+        <div className="flex items-center mt-4">
+          <img src={Sigina} alt="" className="w-60" />
+          <div className="ml-4">
+            <span className="text-xl font-bold">SiGina</span>
+            <p>GeoRIMA (Geological Resources of Indonesia Multiplatform Application) adalah aplikasi yang digunakan untuk memberikan informasi kepada masyarakat umum mengenai keterdapatan potensi mineral, batubara, panas bumi di seluruh Indonesia.</p>
+            <div className="flex">
+              <div className="w-32 px-2 py-1 text-center border-2 rounded-md cursor-pointer">Lihat Layanan</div>
+              <div className="w-32 px-2 py-1 text-center bg-[#242E3A] text-[#F9AE0C] rounded-md ml-6 cursor-pointer">Unduh Aplikasi</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Pelayanan End */}
+
+      {/* Contact start */}
+      <div className="mx-24 mt-8 font-readux">
+        <span className="text-4xl">Ikuti Terus</span> <br />
+        <span className="text-4xl font-bold">Update Berita Dari Kami</span>
+        <form action="" className="grid grid-cols-3 gap-4 mt-5">
+          <div className="flex flex-col">
+            <label htmlFor="nama1">Nama Lengkap</label>
+            <input type="text" id="nama1" className="border-2 px-2 py-2 rounded-md" placeholder="Nama Lengkap Kamu"/>
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="nama2">Nama Perusahaan</label>
+            <input type="text" id="nama1" className="border-2 px-2 py-2 rounded-md" placeholder="Input Nama Perusahaan"/>
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="nama3">Email</label>
+            <input type="text" id="nama1" className="border-2 px-2 py-2 rounded-md" placeholder="Email@kamu.com"/>
+          </div>
+        </form>
+        <div className="w-28 px-1 py-2 text-center mt-3 mb-20 ml-auto rounded-md bg-[#242E3A] text-[#F9AE0C]">Kirim</div>
+      </div>
+      {/* contact end */}
 
 
       {/* <div className="p-4">
