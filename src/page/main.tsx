@@ -19,7 +19,7 @@ import Sirima from "../assets/images/sirima.png";
 import Simbakun from "../assets/images/simbakun.png";
 import Andini from "../assets/images/andini.png";
 import Simanis from "../assets/images/simanis.png";
-import Lastri from "../assets/images/simanis.png";
+import Lastri from "../assets/images/lstri.png";
 import Sigina from "../assets/images/sigina.png";
 
 
@@ -524,7 +524,7 @@ const MainPage: React.FC = () => {
             <input type="text" id="nama1" className="border-2 px-2 py-2 rounded-md" placeholder="Email@kamu.com"/>
           </div>
         </form>
-        <div className="w-28 px-1 py-2 text-center mt-3 mb-20 ml-auto rounded-md bg-[#242E3A] text-[#F9AE0C]">Kirim</div>
+        <div className="w-28 px-1 py-2 text-center mt-3 mb-8 ml-auto rounded-md bg-[#242E3A] text-[#F9AE0C]">Kirim</div>
       </div>
       {/* contact end */}
 
