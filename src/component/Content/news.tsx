@@ -2,7 +2,6 @@
 // import { IMAGES } from "../../assets";
 import UserIcon from "../../assets/icon/user-icon.svg";
 import Calendar from "../../assets/icon/calendar-icon.svg";
-import Aktiviti from "../../assets/images/activity.jpeg";
 
 const NewsCard: React.FC<{
   title: string;
@@ -12,7 +11,7 @@ const NewsCard: React.FC<{
   // onDetailClick: () => void;
 
   
-}> = ({ title, description, date, }) => {
+}> = ({ title, description, date, image }) => {
   return (
     // <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xs xl:max-w-xs rounded overflow-hidden shadow-lg m-2 sm:m-4">
     //   <img className="w-full border-b-2 border-gray-300" src={IMAGES.news} alt={title} />
@@ -34,7 +33,7 @@ const NewsCard: React.FC<{
     <div className="flex justify-between">
       <div className="w-[350px] border-2 rounded-lg shadow-md p-4">
         <div className="flex justify-center">
-          <img src={Aktiviti} alt="" className="w-[350px] rounded-md" />
+          <img src={image} alt="" className="w-[350px] rounded-md" />
         </div>
         <div className="">
           <h3 className="text-black">{title}</h3>

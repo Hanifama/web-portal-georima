@@ -6,13 +6,14 @@ import ActivityCard from "../component/Content/activity";
 // import NewsCard from "../component/Content/news";
 import ServiceCard from "../component/Content/service";
 // import WorkAchievementChart from '../component/Content/chart';
-import Poligon from "../assets/icon/Polygon 3.png";
-import Phone from "../assets/icon/phone-icon.svg";
-import Mail from "../assets/icon/mail-icon.svg";
-import Maps from "../assets/icon/maps-icon.svg";
-import Clock from "../assets/icon/clock-icon.svg";
+// import Poligon from "../assets/icon/Polygon 3.png";
+// import Phone from "../assets/icon/phone-icon.svg";
+// import Mail from "../assets/icon/mail-icon.svg";
+// import Maps from "../assets/icon/maps-icon.svg";
+// import Clock from "../assets/icon/clock-icon.svg";
 import axios from 'axios';
 import NewsCard from "../component/Content/news";
+import Profile from "../component/Content/profile";
 
 
 interface NewsItem {
@@ -123,9 +124,9 @@ const MainPage: React.FC = () => {
   //   },
   // ];
 
-  const [isTugas, setIsTugas] = useState(false);
-  const [isFungsi, setIsFungsi] = useState(false);
-  const [isInformasi, setIsInformasi] = useState(false);
+  // const [isTugas, setIsTugas] = useState(false);
+  // const [isFungsi, setIsFungsi] = useState(false);
+  // const [isInformasi, setIsInformasi] = useState(false);
 
   const url = "https://georima.pptik.id/api/v1/activities/public/get?page=1&limit=10";
   const [news, setNews] = useState<NewsItem[]>([]);
@@ -142,9 +143,6 @@ const MainPage: React.FC = () => {
       console.error("Error fetching data:", error);
     }
   };
-  
-  console.log(news)
-  
 
   useEffect(() => {
     getDataNews();
@@ -228,84 +226,9 @@ const MainPage: React.FC = () => {
     <div className="flex flex-col min-h-screen w-full">
       <Header />
       <MainContent />
-
-      <div className="bg-gray-200 flex p-6 font-readex">
+      <div className="bg-gray-200 flex py-6 px-10 font-readex">
         <div className="bg-white rounded-xl shadow-lg w-full max-h-fit">
-          <div className="flex mb-4 w-full p-3">
-            <div className="flex mb-4 p-3">
-              <div className="flex-grow p-2">
-                <div className="border-2 w-96 h-48 rounded-lg"></div>
-                <div className="flex items-center justify-between mt-4 cursor-pointer" onClick={() => setIsTugas(!isTugas)}>
-                  <div>
-                    <span className="font-bold text-2xl">Tugas</span>
-                    <span className="text-2xl ml-1">Georima</span>
-                  </div>
-                  <div className="mr-6">
-                    <img src={Poligon} alt="" className="w-3 pt-3" />
-                  </div>
-                </div>
-                {isTugas && (
-                  <div className="border-2 w-96 rounded-lg px-5 py-3.5 mt-1 mb-1">
-                    Menyelenggarakan penelitian, penyelidikan, dan pelayanan di bidang sumber daya mineral, batubara, dan panas bumi.
-                  </div>
-                )}
-                <div className="flex items-center justify-between cursor-pointer" onClick={() => setIsFungsi(!isFungsi)}>
-                  <div>
-                    <span className="font-bold text-2xl">Fungsi</span>
-                    <span className="text-2xl ml-1">Georima</span>
-                  </div>
-                  <div className="mr-6">
-                    <img src={Poligon} alt="" className="w-3 pt-3" />
-                  </div>
-                </div>
-                {isFungsi && (
-                  <div className="border-2 w-96 rounded-lg px-5 py-3.5 mt-1 mb-1">
-                    Menyelenggarakan penelitian, penyelidikan, dan pelayanan di bidang sumber daya mineral, batubara, dan panas bumi.
-                  </div>
-                )}
-                <div className="flex items-center justify-between mt-2 cursor-pointer" onClick={() => setIsInformasi(!isInformasi)}>
-                  <div>
-                    <span className="font-bold text-2xl">Informasi</span>
-                    <span className="text-2xl ml-1">Georima</span>
-                  </div>
-                  <div className="mr-6 transition-opacity duration-900 ease-in-out ${isPoligonVisible ? 'opacity-100' : 'opacity-0'}`">
-                    <img src={Poligon} alt="" className="w-3 pt-3 " />
-                  </div>
-                </div>
-                {isInformasi && (
-                  <div className="w-96 border-2 p-7 rounded-lg">
-                    <div className="flex-grow flex items-center">
-                      <img src={Phone} alt="" />
-                      <p className="text-base ml-6"> (022)5202698</p>
-                    </div>
-                    <div className="flex-grow flex items-center">
-                      <img src={Mail} alt="" />
-                      <p className="text-base ml-6"> psdmbp2@esdm.go.id</p>
-                    </div>
-                    <div className="flex-grow flex items-center">
-                      <img src={Maps} alt="" />
-                      <p className="text-base ml-6"> Gedung A.F Lasut X Jl. Soekarno Hatta No.444, Pasirluyu, Kec. Regol, Kota Bandung, Jawa Barat 40254</p>
-                    </div>
-                    <div className="flex-grow flex items-center">
-                      <img src={Clock} alt="" />
-                      <p className="text-base ml-6">Senin - Kamis : 08.00 - 16.00 WIB <br />Jum’at  : 08.00 - 16.30 WIB <br /> Sabtu dan Minggu : Tutup <br /> Tanggal Merah Lainnya : Tutup</p>
-                    </div>
-                    <div className="py-2 px-4 bg-[#242E3A] text-[#F9AE0C] w-32 rounded-md cursor-pointer">Kontak Kami</div>
-                  </div>
-                )}
-              </div>
-              <div className="flex-grow ml-20 mt-2 font-readux">
-                <div>
-                  <span className="text-3xl font-bold">Tentang</span> <span className="text-3xl">GeoRima</span>
-                </div>
-                <p className="mt-6">GeoRima Next Generation merupakan Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique erat eget pulvinar ullamcorper. Fusce dignissim nisl et bibendum sodales. Ut nunc purus, scelerisque eu efficitur vitae, suscipit quis massa. Cras eget felis consectetur, rhoncus tellus eleifend, vehicula sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris vulputate ligula vel vestibulum sagittis. Duis rutrum ac ex vel consectetur. Duis in tortor id magna bibendum tempor. Sed in elementum sapien. Ut sed condimentum purus, in interdum purus. Phasellus imperdiet dictum malesuada. Sed a orci leo. Duis lorem ipsum, consectetur quis nunc eu, laoreet facilisis elit. Donec blandit augue eu maximus varius. Donec vitae leo ultrices, pretium massa sit amet, pellentesque est.</p>
-                <div>
-                  <span className="text-2xl font-bold">Badan</span> <span className="text-2xl">Keanggotaan</span>
-                  <div className="w-full h-[500px] border-2 rounded-lg mt-6"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Profile />
         </div>
       </div>
 
@@ -329,12 +252,13 @@ const MainPage: React.FC = () => {
               //   <p>Tanggal: {newsItem.createdAt}</p>
               // </div>
               <NewsCard
-              key={newsItem.guid}
-              title={newsItem.title}
-              image={newsItem.image}
-              description={newsItem.description}
-              date={newsItem.createdAt}
-            />
+                key={newsItem.guid}
+                title={newsItem.title}
+                image={`https://georima.pptik.id/api/${newsItem.image}`}
+                description={newsItem.description}
+                date={newsItem.createdAt}
+              // onDetailClick={newsItem.guid}
+              />
             ))
           ) : (
             <p>Tidak ada data.</p>
