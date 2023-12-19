@@ -11,6 +11,7 @@ class apiService {
     );
     return response.data;
   }
+  
   static async getActivityData(page: number, limit: number): Promise<any> {
     const response: any = await api.get(
       `activities/public/get?page=${page}&limit=${limit}`,
