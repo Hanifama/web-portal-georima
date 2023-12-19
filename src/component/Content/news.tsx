@@ -1,64 +1,108 @@
-// import React from "react";
-// import { IMAGES } from "../../assets";
 import UserIcon from "../../assets/icon/user-icon.svg";
 import Calendar from "../../assets/icon/calendar-icon.svg";
+import { timeConvert } from "../../helper/convertTime";
+import { truncateDescription } from "../../helper/truncateDescription";
+import {
+  Button,
+  Dialog,
+  DialogHeader,
+  DialogBody,
+  DialogFooter,
+} from "@material-tailwind/react";
+import { useState } from "react";
 
-const NewsCard: React.FC<{
-  title: string;
-  image: string;
-  description: string;
-  date: string;
-  // onDetailClick: () => void;
+type newsProps = {
+  data: any;
+  onDetailNews: (guid: any) => void;
+};
 
+const NewsCard: React.FC<newsProps> = ({ data, onDetailNews }) => {
+  const maxDescriptionLength = 100;
+  const [open, setOpen] = useState<any>(false);
+  const [file, setFile] = useState<any>(false);
+
+  const handleOpen = async (file: any) => {
+    setOpen(true);
+    setFile(file);
+  };
+  const handleClose = async () => {
+    setOpen(false);
+  };
+
+  const handleDetail = async (guid: string) => {
+    onDetailNews(guid);
+  };
   
-}> = ({ title, description, date, image }) => {
   return (
-    // <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xs xl:max-w-xs rounded overflow-hidden shadow-lg m-2 sm:m-4">
-    //   <img className="w-full border-b-2 border-gray-300" src={IMAGES.news} alt={title} />
-    //   <div className="px-6 py-4">
-    //     <div className="font-bold text-xl mb-2">{title}</div>
-    //     <p className="text-gray-700 text-base">{description}</p>
-    //   </div>
-    //   <div className="px-6 py-4 flex justify-between items-center">
-    //     <p className="text-gray-600 text-sm">{date}</p>
-    //     <button
-    //       onClick={onDetailClick}
-    //       className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-    //     >
-    //       Detail
-    //     </button>
-    //   </div>
-    // </div>
-    
     <div className="flex justify-between">
       <div className="w-[350px] border-2 rounded-lg shadow-md p-4">
         <div className="flex justify-center">
-          <img src={image} alt="" className="w-[350px] rounded-md" />
+          <img
+            src={`https://georima.pptik.id/api/${data.image}`}
+            alt={`News: ${data.title}`}
+            className="news-image rounded-md max-h-[200px]"
+            onClick={() => handleOpen(data.image)}
+          />
         </div>
         <div className="">
-          <h3 className="text-black">{title}</h3>
+          <h3 className="text-black">{data.title}</h3>
           <div className="flex items-center">
             <img src={Calendar} alt="" className="mr-2" />
-            <p className="ml-8">{date}</p>
+            <p className="ml-8"> {timeConvert(data.timestamp)}</p>
           </div>
           <div className="flex items-center">
             <img src={UserIcon} alt="" className="mr-2" />
-            <p className="ml-8">Pusat Sumber Daya Mineral, Batubara, dan Panas Bumi</p>
+            <p className="ml-8">
+              Pusat Sumber Daya Mineral, Batubara, dan Panas Bumi
+            </p>
           </div>
-          <p>{description}</p>
+          <p>{truncateDescription(data.description, maxDescriptionLength)}</p>
         </div>
-        <div className="w-32 bg-black text-[#F9AE0C] px-2 py-2 text-center rounded-md cursor-pointer">Lanjutkan</div>
+        <div
+          className="w-32 bg-black text-[#F9AE0C] px-2 py-2 text-center rounded-md cursor-pointer"
+          onClick={() => handleDetail(data.guid)}
+        >
+          Lanjutkan
+        </div>
       </div>
+      <Dialog
+        size="lg"
+        open={open}
+        handler={handleOpen}
+        className="overflow-y-auto max-h-screen"
+      >
+        <DialogHeader className="justify-between">
+          <div className="flex items-center gap-3">
+            {/* <Avatar
+              size="sm"
+              variant="circular"
+              alt="tania andrew"
+              src={`https://georima.pptik.id/api/${file}`}
+            /> */}
+          </div>
+        </DialogHeader>
+        <DialogBody>
+          <img
+            alt="nature"
+            className="h-[48rem] w-full rounded-lg object-cover object-center"
+            src={`https://georima.pptik.id/api/${file}`}
+          />
+        </DialogBody>
+        <DialogFooter className="justify-between">
+          <div className="flex items-center gap-16"></div>
+          <Button
+            onClick={handleClose}
+            size="sm"
+            variant="outlined"
+            color="blue-gray"
+            className="mr-5 flex items-center"
+          >
+            Tutup
+          </Button>
+        </DialogFooter>
+      </Dialog>
     </div>
   );
 };
 
 export default NewsCard;
-
-
-// export default function news() {
-//   return (
-    
-//   )
-// }
-

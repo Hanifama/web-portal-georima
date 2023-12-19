@@ -1,6 +1,6 @@
 import React from "react";
 // import { IMAGES } from "../../assets";
-import Logo from "../../assets/icon/logo.svg"
+import Logo from "../../assets/icon/logo.png"
 import Poligon from "../../assets/icon/Polygon 3.png"
 
 const Navbar: React.FC = () => {
@@ -24,27 +24,26 @@ const Navbar: React.FC = () => {
           Profile
           <img src={Poligon} alt="" className="ml-1 mt-5 w-2"/>
         </a>
-
-        <a href="#" className="flex items-center text-[#242E3A] hover:text-gray-400 mr-2">
+        {/* <a href="#" className="flex items-center text-[#242E3A] hover:text-gray-400 mr-2">
           Satker
           <img src={Poligon} alt="" className="ml-1 mt-5 w-2"/>
-        </a>
+        </a> */}
         <a href="#" className="flex items-center text-[#242E3A] hover:text-gray-400 mr-2">
           Pelayanan Publik
           <img src={Poligon} alt="" className="ml-1 mt-5 w-2"/>
         </a>
         <a href="#" className="flex items-center text-[#242E3A] hover:text-gray-400 mr-2">
-          Sarana
+          Berita
           <img src={Poligon} alt="" className="ml-1 mt-5 w-2"/>
         </a>
         <a href="#" className="flex items-center text-[#242E3A] hover:text-gray-400 mr-2">
-          Publikasi
+          Kegiatan
           <img src={Poligon} alt="" className="ml-1 mt-5 w-2"/>
         </a>
-        <a href="#" className="flex items-center text-[#242E3A] hover:text-gray-400 mr-2">
+        {/* <a href="#" className="flex items-center text-[#242E3A] hover:text-gray-400 mr-2">
           RB
           <img src={Poligon} alt="" className="ml-1 mt-5 w-2"/>
-        </a>
+        </a> */}
         <div className="bg-[#242E3A] text-[#F9AE0C] px-7 py-2 rounded-md cursor-pointer">
           Login
         </div>
